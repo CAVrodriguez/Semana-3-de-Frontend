@@ -1,0 +1,623 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            font-family:Georgia, 'Times New Roman', Times, serif   
+        }
+        body{
+            margin: 0px;
+        }
+        .banner{
+            height: 100px;
+            background-color: rgba(255,255,255,.8);
+            position: relative;
+            background-position: top;
+            width: 100%;
+            border-bottom: 3px solid rgba(255,255,255,1);
+            display:flex;
+            column-gap: 5%;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: nowrap;
+            
+        }
+        .target:nth-of-type(1) {
+            align-self:center;
+            margin-right: 20%;
+            margin-left: 3%
+        }
+        .final:nth-of-type(6){
+            margin-right:10%
+        }
+        .derecha{
+            text-align: right
+        }
+        /* .fondoBlancoyazul{
+            background: linear-gradient(90deg, white 50%, rgba(35, 139, 247, 1) 50%);
+            height: 1000px */
+        /* } */
+        .fondoBlancoyazul{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: rgba(35, 139, 247, 1);
+            position: absolute;
+            left: 50%;
+            height: 1100px;
+            width:50%;
+            
+        }
+        .contenedor{
+            width: 100%;
+            height: 100%;
+            position: relative
+        }
+        .centrado{
+            text-align:center;
+            top: 1200px;
+        }
+        .titulo{
+            font-size: 30px;
+            font-weight: 900;
+            font: Georgia;
+            color: rgba(42, 92, 220, 1)
+        }
+        .gris{
+            color:grey;
+            font-weight: bold;
+            font-size:18px;
+        }
+        .botonAzul{
+            background-color:rgba(42, 92, 220, 1);
+            color: white;
+            border-radius: 6px;
+            border:0px;
+            height: 50px;
+            width: 150px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-shadow: 0px 7px 10px rgba(146, 165, 245, 0.8);
+            font-size:16px
+        }
+
+        .bloquedeFrontpage{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:flex-start;
+            position: absolute;
+            left:5%;
+            top: 250px;
+            right:650px;
+            row-gap: 0px;
+            flex-wrap:wrap
+            
+        }
+        .subtitulo{
+            font-size: 60px;
+            align-self:flex-start;
+            color: rgb(4, 41, 143);
+            font-weight: 1000;
+        }
+        .contenido{
+            font-size: 26px;
+            color: grey;
+            line-height: 35px;
+            
+            /* falta justificar */
+        }
+        .imagen{
+            right: 120px;
+            top: 200px;
+            position:absolute
+        }
+        .citaparavacunacion{
+            display: inline-flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: no-wrap;
+            column-gap: 20px;
+            row-gap: 10px;
+            padding: 5px;
+            font-size:20px;
+            color: grey;
+            background-color: rgba(255,255,255,.9);
+            width: 1200px;
+            height: 125px;
+            position:absolute;
+            top: 700px;
+            left: 5%;
+            box-shadow: 0px 4px 10px rgb(226, 232, 248)
+        }
+
+        .segundaColumnadeCita{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .formatodeBotondeCitas{
+            align-self: center
+        }
+
+        .trianguloHacialaIzquierda {
+            width: 0; 
+            height: 0; 
+            border-right: 175px solid #74727015;
+            border-top: 140px solid transparent;
+            border-bottom: 140px solid transparent;
+            position:absolute;
+        
+        }
+
+        .segundotriangulo{
+            top: 35%;
+            left:40.85%
+        }
+        .trianguloHaciaAbajo {
+            width: 0; 
+            height: 0; 
+            border-top: 175px solid #74727015;
+            border-left: 140px solid transparent;
+            border-right: 140px solid transparent;
+            position:absolute;
+            top: 0%;
+            left:10%
+        }
+
+        .marcasdevacunas{
+            display:flex;
+            width: 100%;
+            top: 1100px;
+            position:absolute;
+        }
+
+        .bloquedeSegundaPagina{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:flex-start;
+            position: absolute;
+            left:5%;
+            top: 1500px;
+            right:650px;
+            row-gap: 0px;
+            flex-wrap:wrap
+        }
+        .contenedordeBeneficios{
+            display:inline-flex;
+            justify-content: space-around;
+            align-items: center;
+            column-gap: 25px;
+            top: 1900px;
+            left:20%;
+            position:absolute;
+        }
+
+        .cuadrodeBeneficios{
+            padding-top: 20px;
+            padding-left: 20px;
+            position:relative;
+            background-color: rgba(255, 255, 255, 0.89);
+            width: 300px;
+            height:350px;
+            box-shadow: 0px 4px 10px rgb(226, 232, 248)
+        }
+
+        .sombradeSegundoCuadro{
+            box-shadow: 0px 10px 100px rgb(226, 232, 248)
+        }
+
+        .titulodeCuadro{
+            font-size: 30px;
+            font-weight: bold;
+            color:rgb(0, 0, 0)
+        }
+
+
+        .contenidodeCuadro{
+            font-size: 20px;
+            color: grey;
+            line-height: 30px;
+        }
+
+
+        .cuadroazul{
+            background-color: rgba(35, 139, 247, 1);
+            position: absolute;
+            height: 750px;
+            width:40%;
+        }
+
+        .primerCuadroAzul{
+            left:0%;
+            width:45%;
+            top: 2800px
+
+        }
+
+        .imagendePrimerCuadroAzul{
+            display: flex;
+            justify-content:flex-start;
+            align-items:flex-start;
+            position: absolute;
+            top: 2550px;
+            left:0px;
+            width:100%;
+            margin-left:0px
+        }
+
+        .bloquedeTerceraPagina{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:flex-start;
+            position: absolute;
+            right:5%;
+            top: 2400px;
+            left: 55%;
+            row-gap: 0px;
+            flex-wrap:wrap
+        }
+
+        .contenedordeTerceraPagina{
+            display:flex;
+            justify-content: space-between;
+            flex-direction: column;
+            row-gap: 30px;
+            position: absolute;
+            top: 2830px;
+            left: 55%
+
+            
+        }
+        .cuadrodeTerceraPagina{
+            display:inline-flex;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: rgba(255, 255, 255, 0.89);
+            box-shadow: 0px 4px 10px rgb(226, 232, 248);
+            width: 700px;
+            height: 100px;
+        }
+
+        .segundoCuadrodeTerceraPagina{
+            height: 200px;
+            box-shadow: 0px 10px 100px rgb(226, 232, 248)
+        }
+
+        .contenidodeRectangulos{
+            font-size: 28px;
+            color: rgb(61, 60, 60);
+            font-weight: 600;
+            
+        }
+
+        .segundoCuadroAzul{
+            right:0px;
+            width:45%;
+            top: 4150px
+        }
+
+        .contenedordeImagendeJoven{
+            position:absolute;
+            top: 3900px;
+            right:0px
+        }
+
+        .bloquedeCuartaPagina{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:flex-start;
+            position: absolute;
+            left:5%;
+            top: 3700px;
+            right:650px;
+            row-gap: 0px;
+            flex-wrap:wrap
+        }
+
+        .contenedorde4cuadros{
+            display:flex;
+            flex-direction: column;
+            position:absolute;
+            top:4150px;
+            left:7%;
+            justify-content: space-around;
+            row-gap:50px
+        }
+        .contenederde2cuadros{
+            display:flex;
+            justify-content: space-around;
+            column-gap:50px
+        }
+
+        .contenedorde1cuadro{
+            display:flex;
+            width: 300px;
+            height:250px;
+            background-color: rgba(255, 255, 255, 0.89);
+            box-shadow: 0px 4px 10px rgb(226, 232, 248);
+            
+        }
+        .parte1superiordelcuadro{
+            display:flex;
+            justify-content:flex-start;
+            align-items: center;
+            position: relative;
+            left:0px;
+            height: 110px;
+            width:300px;
+            padding:30px
+        }
+
+        .titulode4cuadros{
+            align-self:flex-start;
+            margin-left:50px;
+            font-size: 32px;
+            color: rgb(8, 0, 80);
+
+        }
+        .parte2superiordelcuadro{
+            display:flex;
+            justify-content:center;
+            align-items: flex-end;
+            position:absolute;
+            left:50px;
+            height: 130px;
+            width:300px;
+        }
+
+        .subtitulodesegundacolumna{
+            position:absolute;
+            left: 800px
+        }
+        .parteinferiordelcuadro{
+            position: relative;
+            left: -200px;
+            top: 160px;
+            background-color:rgba(42, 92, 220, 1);
+            color: white;
+            border-radius: 6px;
+            border:0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-shadow: 0px 7px 10px rgba(146, 165, 245, 0.8);
+            font-size:16px;
+            height: 60px;
+            width: 2000px
+            }
+
+
+            .contenedorfinal{
+                display:flex;
+                position: absolute;
+                top:5200px;
+                width: 100%;
+                height: 400px;
+                background-color: rgb(236, 240, 253)
+            }
+
+            .contenedordecolumnasfinal{
+                display:flexbox;
+                position:relative;
+                flex-direction:column;
+                justify-content: space-between;
+                margin-left:10%;
+                top:10%
+
+            }
+
+            .contenedorizquierda{
+                display:inline-flex;
+                position:absolute;
+                flex-direction:column;
+                left: 10%;
+                top: 10%;
+                /* margin-right: 30% */
+            }
+
+            .titulodecolumna{
+                font-weight: 1000;
+                color: rgb(4, 41, 143);
+                font-size:30px
+
+            }
+
+    </style>
+</head>
+<title>Pagina de gg</title>
+<body>
+    <section class="fondoBlancoyazul">
+        <img class="imagen" src="https://www.pngplay.com/wp-content/uploads/7/Doctor-Standing-Background-PNG-Image.png" alt="doctor" width="625px" height="900px" >
+    </section>
+    <section class="banner">
+        <p class="titulo target">Vaccination</p>
+        <p class="gris">Database</p>
+        <p class="gris">Education</p>
+        <p class="gris">News</p>
+        <p class="gris">Regulation</p>
+        <button class="final botonAzul"> Hoax Buster</button>
+    </section>
+    <section class="bloquedeFrontpage">
+        <p class="subtitulo">Fight Virus <br> With Vaccines</p>
+        <p class="contenido">Let's stop this pandemic by killing the virus <br>
+        with a vaccine, don't let yourself and your family<br>
+        get killed</p>
+        
+    </section>
+    <!-- <img class="imagen" src="https://www.pngplay.com/wp-content/uploads/7/Doctor-Standing-Background-PNG-Image.png" alt="doctor" width="625px" height="900px" > -->
+    <section class="citaparavacunacion">
+        <p><img src="https://i.imgur.com/QkrAQa1.jpeg" alt="ubicacion" width="20px" height="20px">Location:<br><p class="segundaColumnadeCita">Jakarta Utara</p></p>
+        <p><img src="https://i.imgur.com/wmcDo5f.jpeg" alt="calendario" width="20px" height="20px">Date:<p class="segundaColumnadeCita">08 July 2021</p></p>
+        <p><img src="https://i.imgur.com/rgP7hrY.jpeg" alt="jeringa" width="20px" height="20px">Vaccine Type:<p class="segundaColumnadeCita">Moderna</p></p>
+        <button class="botonAzul formatodeBotondeCitas">Submit</button>
+    </section>
+    <div class="trianguloHacialaIzquierda segundotriangulo"></div>
+    <div class="trianguloHaciaAbajo"></div>
+    <div class="marcasdevacunas"><img src="https://i.imgur.com/t8FwHTb.png" width="100%"  alt="vacunas"></div>
+    <section class="bloquedeSegundaPagina"><p class="subtitulo">Why should I vaccine?<br><p class="contenido">In order to avoid any doubts about getting the Covid-19<br>
+    vaccine, identify the following 4 benefits of COVID-19<br>vaccination</p></section>
+    <section class="contenedordeBeneficios">
+        <div class="cuadrodeBeneficios">
+            <img src="https://i.imgur.com/aQm0hXt.png" alt="rayas" width="45px" height="35px"><br>
+            <p class="titulodeCuadro">Minimize the <br>spread of viruses</p>
+            <p class="contenidodeCuadro">Vaccine has been proven<br>
+            efective to prevents someone<br>
+            from getting infected with Coronavirus</p>
+        </div>
+        <div class="cuadrodeBeneficios sombradeSegundoCuadro">
+            <img src="https://i.imgur.com/9iukd48.png" alt="escudo" width="40px" height="40px"><br>
+            <p class="titulodeCuadro">Forming<br>antibodies</p>
+            <p class="contenidodeCuadro">COVID-19 vaccine proven to<br>
+            help shape antibody<br>
+            response for inmune system</p>
+        </div>
+        <div class="cuadrodeBeneficios">
+            <img src="https://i.imgur.com/NlfXrfo.png" alt="teams" width="45px" height="35px"><br>
+            <p class="titulodeCuadro">Protect <br>people nearby</p>
+            <p class="contenidodeCuadro">The benefits of COVID-19<br>
+            are that we can also help<br>
+            protect people around us</p>
+        </div>
+        <div class="cuadrodeBeneficios">
+            <img src="https://i.imgur.com/H8J8u4g.png" alt="rayito" width="35px" height="35px"><br>
+            <p class="titulodeCuadro">Creating group<br>inmunity</p>
+            <p class="contenidodeCuadro">COVID-19 vaccination is also<br>
+            beneficial for creating group<br>
+            inmunity or herd inmunity</p>
+        </div>
+    </section>
+    <section class="cuadroazul primerCuadroAzul">
+    </section>
+    <div class="imagendePrimerCuadroAzul"><img src="https://i.imgur.com/pMFDhgx.png?1" alt="mujer" width="800px" height="1000px"></div>
+    <section class="bloquedeTerceraPagina">
+        <p class="subtitulo">Preparations Before Vaccine<br><p class="contenido">The success of vaccines is strongly influenced by the<br>
+    strenth of the body's inmune system. Therefore, there are<br>several things than can be tried to make the COVID-19<br>vaccine work</p>
+    </section>
+    <section class="contenedordeTerceraPagina">
+        <div class="cuadrodeTerceraPagina">
+            <p class="contenidodeRectangulos">Avoid alcoholic beverages <img style= "margin-left: 250px"src="https://i.imgur.com/nVAANxJ.png" alt="flechahaciaabajo" width="40px"height="40px"></p>
+
+        </div>
+        <div class="cuadrodeTerceraPagina segundoCuadrodeTerceraPagina">
+            <p class="contenidodeRectangulos">Avoid stress <img style= "margin-left: 446px"src="https://i.imgur.com/hXyCuI4.png" alt="flechahaciaabajo" width="40px"height="40px"></p>
+        </div>
+        <div class="cuadrodeTerceraPagina">
+            <p class="contenidodeRectangulos">Eat healthy food <img style= "margin-left: 388px"src="https://i.imgur.com/nVAANxJ.png" alt="flechahaciaabajo" width="40px"height="40px"></p>
+        </div>
+        <div class="cuadrodeTerceraPagina">
+            <p class="contenidodeRectangulos">Get enough sleep <img style= "margin-left: 380px"src="https://i.imgur.com/nVAANxJ.png" alt="flechahaciaabajo" width="40px"height="40px"></p>
+        </div>
+        <div class="cuadrodeTerceraPagina">
+            <p class="contenidodeRectangulos">Exercise or physical activity <img style= "margin-left: 225px"src="https://i.imgur.com/nVAANxJ.png" alt="flechahaciaabajo" width="40px"height="40px"></p>
+        </div>
+    </section>
+    <section class="cuadroazul segundoCuadroAzul">
+    </section>
+    <div class="contenedordeImagendeJoven"><img src="https://i.imgur.com/lyzcSoj.png?1" alt="hombre" width="800px" height="1000px"></div>
+    <section class="bloquedeCuartaPagina">
+        <p class="subtitulo">Emergency Contact</p>
+        <p class="contenido">Contact one of the contact below if you or your family feel<br>
+        unwell and have similar symptoms such as Covid-19, make<br>
+        sure you also take care of yourself before reporting to us:</p>
+    </section>
+
+    <section class="contenedorde4cuadros">
+
+        <section class="contenederde2cuadros">
+            
+            <section class="contenedorde1cuadro">
+                <section class="parte1superiordelcuadro">
+                    <img src="https://i.imgur.com/26fdlSP.png" alt="telefono" width="60px" height="60px">
+                    <p class="titulode4cuadros">Call</p>
+                </section>
+                <button class="parteinferiordelcuadro">Call now</button>
+
+            </section>
+
+            <section class="contenedorde1cuadro">
+                <section class="parte1superiordelcuadro">
+                    <img src="https://i.imgur.com/ZypJ19K.png" alt="mensaje" width="110px" height="90px">
+                    <p class="titulode4cuadros">Chat</p>
+                </section>
+                <button class="parteinferiordelcuadro">Chat Now</button>
+
+
+            </section>
+
+        </section>
+
+        <section class="contenederde2cuadros">
+
+            <section class="contenedorde1cuadro">
+                <section class="parte1superiordelcuadro">
+                    <img src="https://i.imgur.com/NvCkC98.png" alt="camara" width="100px" height="60px">
+                    <p class="titulode4cuadros">Video Call</p>
+                </section>
+                <button class="parteinferiordelcuadro">Video Call Now</button>
+                
+            </section>
+
+            <section class="contenedorde1cuadro">
+                <section class="parte1superiordelcuadro">
+                    <img src="https://i.imgur.com/apwWPJd.png" alt="mensaje" width="60px" height="60px">
+                    <p class="titulode4cuadros">Message</p>
+                </section>
+                <button class="parteinferiordelcuadro">Message Now</button>
+                
+            </section>
+
+        </section>
+
+
+    </section>
+
+    
+
+
+    <section class="contenedorfinal">
+        <div class="contenedorizquierda">
+            <p class="titulo">Vaccination</p>
+            <p class="contenidodeCuadro" style="line-height:30px">Our goal is to help the<br> world free from the <br> ongoing pandemic.</p>
+        </div>
+        <section class="contenedordecolumnasfinal">
+            <p>&nbsp;</p>
+        </section>
+        <section class="contenedordecolumnasfinal">
+            <p>&nbsp;</p>
+        </section>
+        <section class="contenedordecolumnasfinal">
+            <p>&nbsp;</p>
+        </section>
+        <section class="contenedordecolumnasfinal">
+            <p class="titulodecolumna">About</p>
+            <p class="contenidodeCuadro">About us</p>
+            <p class="contenidodeCuadro">Features</p>
+            <p class="contenidodeCuadro">News & Blog</p>
+        </section>
+        <section class="contenedordecolumnasfinal">
+            <p class="titulodecolumna">Company</p>
+            <p class="contenidodeCuadro">How we work?</p>
+            <p class="contenidodeCuadro">Capital</p>
+            <p class="contenidodeCuadro">Security</p>
+            
+        </section>
+        <section class="contenedordecolumnasfinal">
+            <p class="titulodecolumna">Support</p>
+            <p class="contenidodeCuadro">FAQs</p>
+            <p class="contenidodeCuadro">Support Center</p>
+            <p class="contenidodeCuadro">Contact Us</p>
+        </section>
+    </section>
+</body>
